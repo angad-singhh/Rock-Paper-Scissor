@@ -17,10 +17,17 @@
         result('scissor');
         ">Scissor</button>
 
+        <p>You chose: <span class="js-myMove">Rock</span></p>
+        <p>Computer chose: <span class="js-comMove">Paper</span></p>
+        <p>Result: <span class="js-result">Loose</span></p>
+        <br>
+        <p class="js-score">Win:  ~ Tie:  ~ Loose: </p>
+
         <button onclick="
         score.win= 0;
         score.loose= 0;
         score.Tie= 0;
+        document.querySelector('.js-score').innerHTML=`Win: ${score.win} ~ Tie: ${score.Tie} ~ Loose: ${score.loose}`;
         localStorage.removeItem('score');
         "
         >Reset</button>
@@ -32,13 +39,20 @@
             loose: 0,
             Tie: 0};
 
+            document.querySelector('.js-score').innerHTML=`Win: ${score.win} ~ Tie: ${score.Tie} ~ Loose: ${score.loose}`;
+            
             function print(yourMove,computerMove,result){
                 if(result=='win') score.win++;
                 else if(result=='tie') score.Tie++;
                 else score.loose++;
 
                 localStorage.setItem('score',JSON.stringify(score));
-                alert(`You picked ${yourMove} and Computer picked ${computerMove}: \n\n Result: ${result} \n\n Score: "Win: ${score.win}", "Tie: ${score.Tie}" "Loose: ${score.loose}"`);
+                // alert(`You picked ${yourMove} and Computer picked ${computerMove}: \n\n Result: ${result} \n\n Score: "Win: ${score.win}", "Tie: ${score.Tie}" "Loose: ${score.loose}"`);
+                document.querySelector('.js-myMove').innerHTML=`${yourMove}`;
+                document.querySelector('.js-comMove').innerHTML=`${computerMove}`;
+                document.querySelector('.js-result').innerHTML=`${result}`;
+                document.querySelector('.js-score').innerHTML=`Win: ${score.win} ~ Tie: ${score.Tie} ~ Loose: ${score.loose}`;
+                
                 return;
             }
 
