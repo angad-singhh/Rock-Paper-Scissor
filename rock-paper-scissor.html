@@ -17,9 +17,28 @@
         result('scissor');
         ">Scissor</button>
 
+        <button onclick="
+        score.win= 0;
+        score.loose= 0;
+        score.Tie= 0;
+        localStorage.removeItem('score');
+        "
+        >Reset</button>
+
         <script>
+            let score=JSON.parse(localStorage.getItem('score')) || 
+            {
+            win: 0,
+            loose: 0,
+            Tie: 0};
+
             function print(yourMove,computerMove,result){
-                alert(`You picked ${yourMove} and Computer picked ${computerMove}: \n Result: ${result}`);
+                if(result=='win') score.win++;
+                else if(result=='tie') score.Tie++;
+                else score.loose++;
+
+                localStorage.setItem('score',JSON.stringify(score));
+                alert(`You picked ${yourMove} and Computer picked ${computerMove}: \n\n Result: ${result} \n\n Score: "Win: ${score.win}", "Tie: ${score.Tie}" "Loose: ${score.loose}"`);
                 return;
             }
 
@@ -74,7 +93,6 @@
                 }
 
             }
-            
 
         </script>
     </body>
