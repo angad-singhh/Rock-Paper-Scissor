@@ -1,0 +1,84 @@
+body{
+    font-family: 'Borel', cursive;
+    position: relative;
+    background-color: #27374D ;
+    color: DDE6ED;
+}
+
+h1{
+    text-align: center;
+    margin: 20px 0 50px 0px;
+    font-family: 'Borel', cursive;
+    color: #DDE6ED;
+}
+
+button{
+    padding: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    background-color: #9DB2BF;
+    border-color: #9DB2BF;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    height: 100vh; /* Adjust the height of the container to fit the viewport */
+}
+
+.game{
+    width: 500px;
+    height: 350px;
+    display: grid;
+    grid-template-rows: 50px 100px 50px 50px 50px;
+    text-align: center;
+    border: 2px solid;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #526D82;
+    border-color: #9DB2BF;
+}
+.top{
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+    
+}
+.images{
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 1;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.images img{
+    width: 75px;
+    border: 3px;
+    border-style: dotted;
+    border-radius: 10px;
+    padding: 10px;
+    border-color: #27374D;
+}
+
+
+.img-result{
+    text-align: center;
+    font-weight: bold;
+}
+.js-result{
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+}
+.js-comMove{
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+}
+
+.live-score{
+    font-family: Arial, Helvetica, sans-serif;
+}
