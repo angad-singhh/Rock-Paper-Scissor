@@ -9,7 +9,7 @@ document.querySelector('.js-score').innerHTML = `Win: ${score.win} ~ Tie: ${scor
 
 function print(yourMove, computerMove, result) {
     if (result == 'WIN') score.win++;
-    else if (result == 'Tie') score.Tie++;
+    else if (result == 'TIE') score.Tie++;
     else score.loose++;
 
     localStorage.setItem('score', JSON.stringify(score));
